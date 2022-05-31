@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Button, Image } from 'react-native';
+import { View, Text, Button, Image,StyleSheet } from 'react-native';
 //import scroll view
 import { ScrollView } from 'react-native-gesture-handler';
 import axios from 'axios';
@@ -26,7 +26,7 @@ const Main = ({route, navigation}) => {
         //set books to only books that have thumbnail
         books.forEach(book => {
             if(book.volumeInfo.imageLinks === undefined){
-                book.volumeInfo.imageLinks = {thumbnail: 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'};
+                book.volumeInfo.imageLinks = {thumbnail: 'https://westsiderc.org/wp-content/uploads/2019/08/Image-Not-Available.png'};
             }
         });
         //display books
@@ -36,15 +36,19 @@ const Main = ({route, navigation}) => {
                 <TouchableOpacity key={index} onPress={() => {
                     navigation.navigate('Book', {book: book});
                 }}>
-                    <View key={index}>
-                    {/* display image link thumbnail as an image */}
-                        <Image
-                            style={{width: 100, height: 100}}
-                            source={{uri: book.volumeInfo.imageLinks.thumbnail}}
-                        />
-                    {/* display title */}
-                        <Text>{book.volumeInfo.title}</Text>
+                    <View style={Style.container}>
+                        <View style={Style.catalog} key={index}>
+                        {/* display image link thumbnail as an image */}
+                            <Image
+                                style={Style.images}
+                                source={{uri: book.volumeInfo.imageLinks.thumbnail}}
+                            />
+                        {/* display title */}
+                            
+                            <Text style={Style.title}>{book.volumeInfo.title}</Text>
+                        </View>
                     </View>
+                    
                 </TouchableOpacity>
             )
         }
@@ -76,7 +80,54 @@ const Main = ({route, navigation}) => {
         />
         </View>
         </ScrollView>
-      );
-}
+    );
 
+    
+
+}
+const Style = StyleSheet.create({
+    container:{
+        // flex: 1,
+        alignItems: 'center',
+        // justifyContent: 'center'
+        marginTop: 20,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+        alignContent: 'space-between',
+        padding: 10,
+        backgroundColor: 'white',
+        borderRadius: 10,
+        borderWidth: 1,
+        borderColor: '#ddd',
+        width: 300,
+
+    },
+    catalog:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 10,
+        borderwidth: 20,
+        borderColor: 'black',
+        width: 200,
+    },
+    images:{
+        width: 100, 
+        height: 100,
+        flexDirection: 'column',
+        alignItems: 'flex-end',
+    },
+    title:{
+        fontSize: 14,
+        // position: 'absolute',
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        // top: 0,
+        // left: 0,
+        // right: 0,
+        // bottom: 0,
+
+    },
+});
 export default Main;

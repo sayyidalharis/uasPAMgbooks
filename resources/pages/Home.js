@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import { View, Text, Button, TextInput } from 'react-native';
+import { View, Text, Button, TextInput,StyleSheet,Image } from 'react-native';
 import axios from 'axios';
 import SearchBar from './SearchBar';
 
 const HomeScreen = ({navigation}) => {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen ni bousz</Text>
+      <View style={Style.container}>
+        <Image
+                style={{width: 100, height: 100}}
+                source={require('../image/Book.png')}
+            />
+        {/* <Text>Home Screen ni bousz</Text> */}
         {/* //   display SearchBar */}
         <SearchBar onSearch={(search) => {
             axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyD2bU60Qjtx2JEzpbWI7kQZTsRV6YEwVWQ'+'&maxResults=10')
@@ -22,5 +26,12 @@ const HomeScreen = ({navigation}) => {
     );
   }
   
+  const Style = StyleSheet.create({
+    container:{
+      flex: 1, 
+      alignItems: 'center', 
+      justifyContent: 'center' 
+    }
+  })
 
 export default HomeScreen;
