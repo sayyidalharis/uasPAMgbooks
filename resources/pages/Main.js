@@ -28,6 +28,10 @@ const Main = ({route, navigation}) => {
             if(book.volumeInfo.imageLinks === undefined){
                 book.volumeInfo.imageLinks = {thumbnail: 'https://westsiderc.org/wp-content/uploads/2019/08/Image-Not-Available.png'};
             }
+            //check if book has description
+            if(book.volumeInfo.description === undefined){
+                book.volumeInfo.description = 'No description';
+            }
         });
         //display books
         return books.map((book, index) => {
@@ -47,6 +51,10 @@ const Main = ({route, navigation}) => {
                             
                             <Text style={Style.title}>{book.volumeInfo.title}</Text>
                         </View>
+                        <Text>{
+                            //display description in 12 words
+                            book.volumeInfo.description.substring(0, 200) + '...'
+                        }</Text>
                     </View>
                     
                 </TouchableOpacity>
@@ -74,10 +82,6 @@ const Main = ({route, navigation}) => {
           <Text>{search}</Text>
           {/* display data */}
             {displayData()}
-        <Button
-            onPress={() => navigation.goBack()}
-            title="Go home"
-        />
         </View>
         </ScrollView>
     );
