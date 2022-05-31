@@ -58,7 +58,7 @@ How to use the app:
 
 3. Open the app via Expo Go
 
-    Open the <a href="https://expo.dev/@fadhilazhar/uasPAMgbooks"><b>QR Code Link</b></a>, then scan it on your Expo Go App from your android. Wait for the app to build and then you can use the app! 
+    Open the <a href="https://expo.dev/@meepshere/uasPAMgbooks"><b>QR Code Link</b></a>, then scan it on your Expo Go App from your android. Wait for the app to build and then you can use the app! 
 
 
   <br>
