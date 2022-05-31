@@ -145,7 +145,9 @@ const Style = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         padding: 15,
-        backgroundColor: '#fce5cd'
+        backgroundColor: '#fce5cd',
+        height: '100%',
+        paddingBottom: 35,
     },
 
     gambar: {

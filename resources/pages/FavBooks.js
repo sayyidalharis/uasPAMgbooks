@@ -182,7 +182,8 @@ const Style = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'column',
-        backgroundColor: '#fff4e6'
+        backgroundColor: '#fff4e6',
+        height: '100%',
     },
     judul:{
         flex: 1,
