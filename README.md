@@ -67,15 +67,39 @@ How to use the app:
     
 First time opening the app :
     
-<img src="https://github.com/sayyidalharis/RD-Sayyid-Muhammad-Umar-Al-Haris-119140190-Tugas-Individu-4/blob/master/screenshots/1. First time opening the app.jpeg" height=1000>
+<img src="https://github.com/sayyidalharis/uasPAMgbooks/blob/master/screenshots/Homepage.jpeg" height=1000>
     
 
   <br>
     
     
-Granting access :
+Query result :
     
-<img src="https://github.com/sayyidalharis/RD-Sayyid-Muhammad-Umar-Al-Haris-119140190-Tugas-Individu-4/blob/master/screenshots/2. Granting access.jpeg" height=1000>
+<img src="https://github.com/sayyidalharis/uasPAMgbooks/blob/master/screenshots/Searchbooks.jpeg" height=1000>
+    
+
+  <br>
+    
+    
+Book details :
+    
+<img src="https://github.com/sayyidalharis/uasPAMgbooks/blob/master/screenshots/Bookdetails.jpeg" height=1000>
+    
+
+  <br>
+    
+    
+Favorited books :
+    
+<img src="https://github.com/sayyidalharis/uasPAMgbooks/blob/master/screenshots/Favbooks.jpeg" height=1000>
+    
+
+  <br>
+    
+    
+Developers : 
+    
+<img src="https://github.com/sayyidalharis/uasPAMgbooks/blob/master/screenshots/Developers.jpeg" height=1000>
     
 
   <br>
