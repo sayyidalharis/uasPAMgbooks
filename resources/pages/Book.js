@@ -1,13 +1,25 @@
 //default codes
 import React, { useState } from 'react';
-import { View, Text, Button, Image } from 'react-native';
+import { View, Text, Button, Image, StyleSheet } from 'react-native';
 //import scroll view
 import { ScrollView } from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as WebBrowser from 'expo-web-browser';
 
 
+
 const Book = ({route, navigation}) => {
+
+
+    // function async load font
+    
+    //load fonts
+    
+    
+
+
+
+    
 
     //get book from route
     const {book} = route.params;
@@ -78,50 +90,101 @@ const Book = ({route, navigation}) => {
 
     return (
         <ScrollView>
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Book Screen</Text>
+        <View style={Style.container}>
+            <Text style={Style.header}>Book Details</Text>
             {/* display image link thumbnail as an image */}
             <Image
-                style={{width: 100, height: 100}}
                 source={{uri: book.volumeInfo.imageLinks.thumbnail}}
+                style={Style.gambar}
             />
             {/* add book into favorite books */}
             <Button
                 title="Add to Favorite"
                 onPress={() => addFavBook(book)}
+                style={Style.button}
             />
-            {/* add button to go to the book link with expo browser */}
+            
+            <View style={Style.detail}>
+                {/* display title if there is one */}
+                {book.volumeInfo.title !== undefined ? <Text style={Style.judul}>{book.volumeInfo.title}</Text> : <Text>No title</Text>}
+                {/* display author if there is one */}
+                {book.volumeInfo.authors !== undefined ? <Text>Author: {book.volumeInfo.authors}</Text> : <Text>No author</Text>}
+                {/* display publisher if there is one */}
+                {book.volumeInfo.publisher !== undefined ? <Text>Publisher: {book.volumeInfo.publisher}</Text> : <Text>No publisher</Text>}
+                {/* display published date if there is one */}
+                {book.volumeInfo.publishedDate !== undefined ? <Text>Published Date: {book.volumeInfo.publishedDate}</Text> : <Text>No published date</Text>}
+                {/* display description if there is one */}
+                <Text>Description:</Text>
+                {book.volumeInfo.description !== undefined ? <Text style={Style.desc}>     {book.volumeInfo.description}</Text> : <Text>No description</Text>}
+                {/* display page count if there is one */}
+                {book.volumeInfo.pageCount !== undefined ? <Text>Halaman: {book.volumeInfo.pageCount}</Text> : <Text>No page count</Text>}
+                {/* display categories if there is one */}
+                {book.volumeInfo.categories !== undefined ? <Text>Categories: {book.volumeInfo.categories}</Text> : <Text>No categories</Text>}
+                {/* display average rating if there is one */}
+                {book.volumeInfo.averageRating !== undefined ? <Text>Rating: {book.volumeInfo.averageRating}</Text> : <Text>No average rating</Text>}
+                {/* display ratings count if there is one */}
+                {book.volumeInfo.ratingsCount !== undefined ? <Text>Rating Count: {book.volumeInfo.ratingsCount}</Text> : <Text>No ratings count</Text>}
+                {/* display language if there is one */}
+                {book.volumeInfo.language !== undefined ? <Text>Language: {book.volumeInfo.language}</Text> : <Text>No language</Text>}
+                {/* add button to go to the book link with expo browser */}
+            </View>
             <Button
                 title="Go to Book Link"
                 onPress={() => WebBrowser.openBrowserAsync(book.volumeInfo.infoLink)}
+                style={Style.button2}
             />
-
-            {/* display title if there is one */}
-            {book.volumeInfo.title !== undefined ? <Text>{book.volumeInfo.title}</Text> : <Text>No title</Text>}
-            {/* display author if there is one */}
-            {book.volumeInfo.authors !== undefined ? <Text>{book.volumeInfo.authors}</Text> : <Text>No author</Text>}
-            {/* display publisher if there is one */}
-            {book.volumeInfo.publisher !== undefined ? <Text>{book.volumeInfo.publisher}</Text> : <Text>No publisher</Text>}
-            {/* display published date if there is one */}
-            {book.volumeInfo.publishedDate !== undefined ? <Text>{book.volumeInfo.publishedDate}</Text> : <Text>No published date</Text>}
-            {/* display description if there is one */}
-            {book.volumeInfo.description !== undefined ? <Text>DESKRIPSI BUKU : {book.volumeInfo.description}</Text> : <Text>No description</Text>}
-            {/* display page count if there is one */}
-            {book.volumeInfo.pageCount !== undefined ? <Text>{book.volumeInfo.pageCount}</Text> : <Text>No page count</Text>}
-            {/* display categories if there is one */}
-            {book.volumeInfo.categories !== undefined ? <Text>{book.volumeInfo.categories}</Text> : <Text>No categories</Text>}
-            {/* display average rating if there is one */}
-            {book.volumeInfo.averageRating !== undefined ? <Text>{book.volumeInfo.averageRating}</Text> : <Text>No average rating</Text>}
-            {/* display ratings count if there is one */}
-            {book.volumeInfo.ratingsCount !== undefined ? <Text>{book.volumeInfo.ratingsCount}</Text> : <Text>No ratings count</Text>}
-            {/* display language if there is one */}
-            {book.volumeInfo.language !== undefined ? <Text>{book.volumeInfo.language}</Text> : <Text>No language</Text>}
-            {/* display info link if there is one */}
-            {book.volumeInfo.infoLink !== undefined ? <Text>{book.volumeInfo.infoLink}</Text> : <Text>No info link</Text>}
         </View>
         </ScrollView>
     )
     
+    
 }
+const Style = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 15,
+        backgroundColor: '#fce5cd'
+    },
+
+    gambar: {
+        width: 150, 
+        height: 150,
+        marginBottom: 20,
+        marginTop: 20,
+    },
+
+    detail: {
+        marginTop: 20,
+        marginBottom: 20,
+        fontFamily: 'sans-serif-condensed',
+        
+    },
+
+
+    button: {
+        color: 'black',
+    },
+    
+    desc: {
+        textAlign: 'justify',
+        marginBottom: 10,
+        
+        
+    },
+    judul:{
+        fontSize: 24,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginBottom: 15,
+    },  
+    
+    header: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        textAlign: 'center',
+    },
+})
 
 export default Book;

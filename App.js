@@ -7,6 +7,7 @@ import Main from './resources/pages/Main.js';
 import HomeScreen from './resources/pages/Home.js';
 import Book from './resources/pages/Book.js';
 import FavBooks from './resources/pages/FavBooks.js';
+import Developer from './resources/pages/Developer.js';
 
 const Stack = createStackNavigator();
 
@@ -16,10 +17,51 @@ function App() {
   return (
     <NavigationContainer ref={ref}>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Main" component={Main} /> 
-        <Stack.Screen name="Book" component={Book} />
-        <Stack.Screen name="FavBooks" component={FavBooks} />
+        <Stack.Screen name="G-Books API App" component={HomeScreen}options={{
+          headerStyle: {
+            backgroundColor: '#e2d1ba',
+          },
+          headerTintColor: '#ab693e',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }} />
+        <Stack.Screen name="Main" component={Main}options={{
+          headerStyle: {
+            backgroundColor: '#e2d1ba',
+          },
+          headerTintColor: '#ab693e',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }} /> 
+        <Stack.Screen name="Book" component={Book}options={{
+          headerStyle: {
+            backgroundColor: '#e2d1ba',
+          },
+          headerTintColor: '#ab693e',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }} />
+        <Stack.Screen name="FavBooks" component={FavBooks}options={{
+          headerStyle: {
+            backgroundColor: '#e2d1ba',
+          },
+          headerTintColor: '#ab693e',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }} />
+        <Stack.Screen name="Developer" component={Developer}options={{
+          headerStyle: {
+            backgroundColor: '#e2d1ba',
+          },
+          headerTintColor: '#ab693e',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

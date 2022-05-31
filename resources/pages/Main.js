@@ -30,7 +30,7 @@ const Main = ({route, navigation}) => {
             }
             //check if book has description
             if(book.volumeInfo.description === undefined){
-                book.volumeInfo.description = 'No description';
+                book.volumeInfo.description = 'There is currently no available description for this book.';
             }
         });
         //display books
@@ -41,19 +41,26 @@ const Main = ({route, navigation}) => {
                     navigation.navigate('Book', {book: book});
                 }}>
                     <View style={Style.container}>
+                    <View style={Style.judul}>
+                        <Text style={Style.title}>{book.volumeInfo.title}</Text>
+                    </View>
+                    
                         <View style={Style.catalog} key={index}>
                         {/* display image link thumbnail as an image */}
+                            
                             <Image
                                 style={Style.images}
                                 source={{uri: book.volumeInfo.imageLinks.thumbnail}}
                             />
                         {/* display title */}
                             
-                            <Text style={Style.title}>{book.volumeInfo.title}</Text>
+                            
                         </View>
-                        <Text>{
+                        <Text style={Style.desc}>{
                             //display description in 12 words
-                            book.volumeInfo.description.substring(0, 200) + '...'
+                            //check if description has more than 200 words
+                            book.volumeInfo.description.length > 200 ?   book.volumeInfo.description.substring(0, 200) + '...' :   book.volumeInfo.description
+                            
                         }</Text>
                     </View>
                     
@@ -66,8 +73,8 @@ const Main = ({route, navigation}) => {
     return (
         //use scroll view
         <ScrollView>
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Text>Main Screen</Text>
+        <View style={Style.wrapper}>
+          {/* <Text>Main Screen</Text> */}
         {/* //   display SearchBar */}
         <SearchBar onSearch={(search) => {
             axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyD2bU60Qjtx2JEzpbWI7kQZTsRV6YEwVWQ'+'&maxResults=10')
@@ -79,7 +86,7 @@ const Main = ({route, navigation}) => {
                 console.log(err);
             })
         }} />
-          <Text>{search}</Text>
+          <Text style={Style.header}>Keyword: {search}</Text>
           {/* display data */}
             {displayData()}
         </View>
@@ -105,33 +112,58 @@ const Style = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#ddd',
         width: 300,
+        backgroundColor: '#fce5cd'
 
     },
     catalog:{
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        margin: 10,
-        borderwidth: 20,
-        borderColor: 'black',
-        width: 200,
+        
     },
     images:{
         width: 100, 
         height: 100,
-        flexDirection: 'column',
-        alignItems: 'flex-end',
+        flexDirection: 'row',
+        // flexDirection: 'column',
+        // alignItems: 'flex-end',
+        // justifyContent: 'flex-end',
+        margin: 10,
     },
     title:{
-        fontSize: 14,
-        // position: 'absolute',
-        // justifyContent: 'center',
-        // alignItems: 'center',
-        // top: 0,
-        // left: 0,
-        // right: 0,
-        // bottom: 0,
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 16,
+        fontWeight: 'bold',
+        paddingLeft: 10,
+        paddingRight: 5,
 
+    },
+    wrapper:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        backgroundColor: '#fff4e6'
+    },
+    judul:{
+        flex: 1,
+        flexDirection: 'row',
+    },
+
+    desc:{
+        textAlign: 'justify',
+    },
+    
+    button:{
+        marginTop: 40,
+        marginBottom: 40,
+    },
+
+    header:{
+        fontSize: 25,
+        fontWeight: 'bold',
+        marginTop: 20,
+        // fontFamily: 'fantasy',
     },
 });
 export default Main;

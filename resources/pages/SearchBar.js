@@ -12,7 +12,7 @@ const SearchBar = ({onSearch}) => {
                 style={Style.searchbar}
                 onChangeText={text => setSearchText(text)}
                 value={searchText}
-                placeholder="Search for a book"
+                placeholder="Search for a book..."
             /> 
             <View style={Style.buttonsearch}>
                 <Button 

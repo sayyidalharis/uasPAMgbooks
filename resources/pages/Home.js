@@ -3,6 +3,7 @@ import { View, Text, Button, TextInput,StyleSheet,Image } from 'react-native';
 import axios from 'axios';
 import SearchBar from './SearchBar';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const HomeScreen = ({navigation}) => {
     return (
@@ -37,6 +38,14 @@ const HomeScreen = ({navigation}) => {
                 console.log(e);
             }
         }} />
+        {/* Button to Developer page */}
+        <View style={Style.dev}>
+          <Button  title="Display App Developers" onPress={() => {
+              navigation.navigate('Developer');
+          }
+          } />
+        </View>
+        
       </View>
     );
   }
@@ -45,7 +54,12 @@ const HomeScreen = ({navigation}) => {
     container:{
       flex: 1, 
       alignItems: 'center', 
-      justifyContent: 'center' 
+      justifyContent: 'center',
+      backgroundColor: '#fce5cd'
+      
+    },
+    dev:{
+      marginTop: 13,
     }
   })
 
