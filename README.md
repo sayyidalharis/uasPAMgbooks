@@ -54,7 +54,7 @@ How to use the app:
 
     After installing the app, grant app the permission to access the android's camera to use the app properly. Now enjoy scanning some QR codes and copying the result! <3
     - <a href="https://github.com/sayyidalharis/uasPAMgbooks"><b>Download the apk here! (uploaded to GitHub)</b></a>
-    - <a href="https://drive.google.com/file/d/11BCir3TTJZwJzgjQoS_-_ES-fYFX6Uh2/view?usp=sharing"><b>Or here! (uploaded to Google Drive)</b></a>
+    - <a href="https://drive.google.com/file/d/1GwChozTryhl3Lt4HxTFmhdcIr3znTGkF/view?usp=sharing"><b>Or here! (uploaded to Google Drive)</b></a>
 
 3. Open the app via Expo Go
 
