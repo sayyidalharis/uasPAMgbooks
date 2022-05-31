@@ -16,15 +16,20 @@ Anggota:
 
 <b> Extra dependencies: </b>
   "dependencies": {
-    "expo": "~44.0.0",
-    "expo-barcode-scanner": "~11.2.0",
-    "expo-clipboard": "~2.1.0",
-    "expo-status-bar": "~1.2.0",
-    "expo-updates": "~0.11.6",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "react-native": "0.64.3",
-    "react-native-web": "0.17.1"
+    "@react-native-async-storage/async-storage": "~1.17.3",
+    "@react-navigation/native": "^6.0.10",
+    "@react-navigation/stack": "^6.2.1",
+    "axios": "^0.27.2",
+    "expo": "~45.0.0",
+    "expo-font": "~10.1.0",
+    "expo-status-bar": "~1.3.0",
+    "expo-web-browser": "~10.2.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-native": "0.68.2",
+    "react-native-gesture-handler": "~2.2.1",
+    "react-native-safe-area-context": "4.2.4",
+    "react-native-web": "0.17.7"
   },
   
 API Google Books:
@@ -53,7 +58,7 @@ How to use the app:
 
 3. Open the app via Expo Go
 
-    Open the <a href="https://expo.dev/@meepshere/tugasAPIpam119140190"><b>QR Code Link</b></a>, then scan it on your Expo Go App from your android. Wait for the app to build and then you can use the app! 
+    Open the <a href="https://expo.dev/@fadhilazhar/uasPAMgbooks"><b>QR Code Link</b></a>, then scan it on your Expo Go App from your android. Wait for the app to build and then you can use the app! 
 
 
   <br>
