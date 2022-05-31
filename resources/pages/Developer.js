@@ -17,7 +17,7 @@ const Developer = ({onSearch}) => {
                     <Text style={Style.text}>
                         Sayyid M Umar Al Haris
                         {"\n"}
-                        119410190
+                        119140190
                         {"\n"}
                         +62 882-8686-7659
                         {"\n"}
@@ -35,7 +35,7 @@ const Developer = ({onSearch}) => {
                     <Text style={Style.text}>
                         Fadhillah Azhar Alsani
                         {"\n"}
-                        119410217
+                        119140217
                         {"\n"}
                         +62 852-6655-9964
                         {"\n"}
@@ -53,7 +53,7 @@ const Developer = ({onSearch}) => {
                     <Text style={Style.text}>
                         M.Daffa Massimiliano A
                         {"\n"}
-                        119410139
+                        119140139
                         {"\n"}
                         +62 877-6926-3564
                         {"\n"}
